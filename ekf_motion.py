@@ -1,3 +1,5 @@
+# 1-D Kalman filter example implementing update and predict steps
+
 from math import *
 
 def update(mean1, var1, mean2, var2):
