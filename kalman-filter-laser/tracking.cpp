@@ -73,7 +73,7 @@ void Tracking::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
   float dt_4 = dt_4 * dt;
 
   kf_.F_(0,2) = dt;
-  kf._.F_(1,3) = dt;
+  kf_.F_(1,3) = dt;
 
 	//2. Set the process covariance matrix Q
   kf_.Q_ = MatrixXd(4,4);
@@ -88,7 +88,7 @@ void Tracking::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 	//4. Call the Kalman Filter update() function
   // with the most recent raw measurements_
 
-  kf_.Update(measurement_pack.row_measurements_);
+  kf_.Update(measurement_pack.raw_measurements_);
 
 
 	std::cout << "x_= " << kf_.x_ << std::endl;

@@ -85,6 +85,8 @@ void filter(VectorXd &x, MatrixXd &P) {
 
     // KF Prediction step
 
+		// State transition function includes process noise, u
+		// However the state prediction function excluse process noise because it has mean 0
     x = F * x + u;
     MatrixXd Ft = F.transpose();
     P = F * P * Ft + Q;
