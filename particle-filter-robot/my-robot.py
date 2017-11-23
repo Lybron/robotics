@@ -109,3 +109,19 @@ def eval(r, p):
 ####   DON'T MODIFY ANYTHING ABOVE HERE! ENTER CODE BELOW ####
 
 myrobot = robot()
+
+# PART 1
+# coordinates 30, 50 heading north (pi/2).
+# Have your robot turn clockwise by pi/2, move
+# 15 m, and sense. Then have it turn clockwise
+# by pi/2 again, move 10 m, and sense again.
+
+# PART 2
+# forward_noise = 5.0, turn_noise = 0.1,
+# sense_noise = 5.0.
+
+myrobot.set(30.0, 50.0, pi/2)
+myrobot = myrobot.move(-pi/2, 15.0)
+myrobot.sense()
+myrobot = myrobot.move(-pi/2, 10.0)
+myrobot.sense()
